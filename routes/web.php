@@ -50,3 +50,4 @@ Route::prefix('/product')->group(function () {
 //create view : php artisan make:view name
 
 // Route::view('/','master');
+
