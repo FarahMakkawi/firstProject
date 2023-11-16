@@ -6,10 +6,10 @@
 
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title">title</h5>
-    <h6 class="card-subtitle mb-2 text-body-secondary">products</h6>
-    <p class="card-text">MVC on prouducts</p>
-    <a href="" class="card-link">show products</a>
+    <h5 class="card-title">Laravel CRUD</h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Hello from HomeContoller</h6>
+
+    <a href="{{route('product.index')}}" class="card-link">show products</a>
   </div>
 </div>
 
@@ -18,7 +18,7 @@
 @section('footer')
 <div>
 
-  hello from footer 
+  {{-- hello from footer  --}}
 
 </div>
 @endsection

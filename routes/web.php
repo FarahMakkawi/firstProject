@@ -22,10 +22,10 @@ use App\Http\Controllers\ProductController;
 // });
 
 
-Route::get('/', [Homecontroller::class,'index']);
+Route::get('/', [Homecontroller::class,'index'])->name('home');
 
 
-Route::get('/test/{id?}/{name?}', [Homecontroller::class,'test']);
+//Route::get('/test/{id?}/{name?}', [Homecontroller::class,'test']);
 
 
 
@@ -41,10 +41,18 @@ Route::get('/test/{id?}/{name?}', [Homecontroller::class,'test']);
 
 
 Route::prefix('/product')->group(function () {
-    Route::get('/store',[ProductController::class,'store']);
-    Route::get('/update',[ProductController::class,'update']);
-    Route::get('/delete',[ProductController::class,'delete']);
-    Route::get('/index',[ProductController::class,'index']);
+Route::get('/index',[ProductController::class,'index'])->name('product.index');
+Route::get('/delete/{id}',[ProductController::class,'delete'])->name('product.delete');
+Route::get('/create',[ProductController::class,'create'])->name('product.create');
+Route::post('/store',[ProductController::class,'store'])->name('product.store');
+Route::get('/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
+Route::post('/update/{id}',[ProductController::class,'update'])->name('product.update');
+
+// Route::get('/info',[ProductController::class,'info'])->name('product.info');
+
+
+    
+
 });
 
 //create view : php artisan make:view name
